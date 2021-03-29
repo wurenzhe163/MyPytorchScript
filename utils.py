@@ -46,7 +46,7 @@ def OneHotEncode(LabelImage,NumClass):
     try:
         one_hot_label = one_hot_codes[LabelImage]
     except IndexError:
-        print('标签存在不连续值，最大值为{}--->已默认将该值进行连续化,仅适用于二分类'.format(np.max(LabelImage)))
+        # print('标签存在不连续值，最大值为{}--->已默认将该值进行连续化,仅适用于二分类'.format(np.max(LabelImage)))
         LabelImage[LabelImage == np.max(LabelImage)] = 1
         one_hot_label = one_hot_codes[LabelImage]
     return one_hot_label
